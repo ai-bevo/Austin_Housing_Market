@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Austin_Housing_Dashboard</title>
+</head>
+<body>
+    <h1>Austin_Housing_Dashboard</h1>
+    <p>Available Routes:</p>
+    <ul>
+        <li><a href="{{ url_for('annual_sales_data') }}">/api/v1.0/annual_sales_table</a></li>
+        <li><a href="{{ url_for('monthly_sales_data') }}">/api/v1.0/monthly_sales_table</a></li>
+        <li><a href="{{ url_for('price_distribution_data') }}">/api/v1.0/price_distribution_table</a></li>
+    </ul>
+</body>
+</html>

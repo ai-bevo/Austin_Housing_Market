@@ -1,9 +1,6 @@
 
 # install for connecting with postgresql
 # pip install psycopg2-binary
-
-
-
 import pandas as pd
 import psycopg2 as pg
 import sqlalchemy
@@ -42,12 +39,14 @@ austin_housing_app = Flask(__name__)
 @austin_housing_app.route("/")
 def welcome():
     # List all available api routes.
-    return(
-        f"Available Routes:<br/>"
-        f"/api/v1.0/annual_sales_table<br/>"
-        f"/api/v1.0/monthly_sales_table<br/>"
-        f"/api/v1.0/price_distribution_table<br/>"
-    )
+
+    return render_template("links.html")
+    #return(
+    #    f"Available Routes:<br/>"
+    #    f"/api/v1.0/annual_sales_table<br/>"
+    #    f"/api/v1.0/monthly_sales_table<br/>"
+    #    f"/api/v1.0/price_distribution_table<br/>"
+    #
 
 @austin_housing_app.route("/api/v1.0/annual_sales_table")
 def annual_sales_data():
