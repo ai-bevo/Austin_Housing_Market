@@ -12,7 +12,7 @@
      crossorigin=""></script>
 </head>
 <body>
-    <div id="plotlyGraph"></div>
+    <div id="plot"></div>
     <div id="leafletMap"></div>
     <h1>Austin_Housing_Dashboard</h1>
     <p>Available Routes:</p>
@@ -22,6 +22,7 @@
         <li><a href="{{ url_for('price_distribution_data') }}">/api/v1.0/price_distribution_table</a></li>
     </ul>
     <!-- Include the JavaScript file -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" src="/static/js/script.js"></script>
 </body>
 </html>

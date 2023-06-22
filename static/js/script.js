@@ -1,25 +1,39 @@
-var jsonData = window.jsonData;
+const jsonData = "http://127.0.0.1:5000/api/v1.0/annual_sales_table";
 
-console.log('Script is running'); 
-
-// Generate Plotly graph
-var plotlyData = [{
-    x: [jsonData.year],                 // Year as x-axis
-    y: [jsonData.average_price],        // Average price as y-axis
-    type: 'bar',                        // Bar chart type
-    marker: {
-      color: 'blue'                     // Customize the bar color
+d3.json(jsonData)
+  .then(function(data) {
+    yearArray = [];
+    priceArray = []
+    for(let i = 0; i < data.length; i++){
+      yearArray.push(data[i]['year'])
+      priceArray.push(data[i]['average_price'])
     }
-}];
+    console.log(data);
+    var plotlyData = [{
+      x: yearArray,                       
+      y:  priceArray,
+      type: 'scatter',
+      marker: {
+        color: 'green'
+      }
+    }];
 
-var layout = {
-    title: 'Average Price per Year',
-    xaxis: {
-      title: 'Year'
-    },
-    yaxis: {
-      title: 'Average Price'
-    }
-  };
+    var layout = {
+      title: 'Average Price per Year',
+      xaxis: {
+        title: 'Year'
+      },
+      yaxis: {
+        title: 'Average Price'
+      }
+    };
+
+    Plotly.newPlot('plot', plotlyData, layout);
+    
+  })
+  .catch(function(error) {
+    console.error('Error:', error);
+  });
   
-Plotly.newPlot('plotlyGraph', plotlyData, layout);
+  
+// Generate Plotly graph

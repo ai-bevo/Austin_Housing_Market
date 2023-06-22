@@ -9,6 +9,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template
+from flask_cors import CORS
 from config import pw
 
 connection_string = f"postgres:{pw}@localhost:5432/austin_housing"
@@ -34,6 +36,8 @@ session.query(annual_sales.median_price).all()
 # flask setup
 
 austin_housing_app = Flask(__name__)
+cors = CORS(austin_housing_app)
+cors = CORS(austin_housing_app, origins=["http://127.0.0.1:5500"])
 
 
 @austin_housing_app.route("/")
