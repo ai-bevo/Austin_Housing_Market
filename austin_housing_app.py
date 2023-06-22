@@ -12,7 +12,7 @@ from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 from config import pw
 
-connection_string = f"postgres:{pw}@localhost:5432/austin_housing"
+connection_string = f"postgres:{pw}@localhost:5432/Austin_Housing_Market"
 engine = create_engine(f'postgresql://{connection_string}')
 
 
@@ -36,7 +36,8 @@ session.query(annual_sales.median_price).all()
 
 austin_housing_app = Flask(__name__)
 cors = CORS(austin_housing_app)
-cors = CORS(austin_housing_app, origins=["http://127.0.0.1:5500"])
+cors = CORS(austin_housing_app, origins=["http://127.0.0.1:5000"])
+#Check port number 5000 or 5500
 #pip install flask-cors
 
 @austin_housing_app.route("/")
