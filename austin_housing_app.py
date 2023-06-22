@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 from flask import Flask, jsonify, render_template
 from config import pw
 
-connection_string = f"postgres:{pw}@localhost:5433/Austin_Housing_Market"
+connection_string = f"postgres:{pw}@localhost:5432/austin_housing"
 engine = create_engine(f'postgresql://{connection_string}')
 
 
@@ -40,7 +40,7 @@ austin_housing_app = Flask(__name__)
 def welcome():
     # List all available api routes.
 
-    return render_template("links.html")
+    return render_template("index.html")
     #return(
     #    f"Available Routes:<br/>"
     #    f"/api/v1.0/annual_sales_table<br/>"
@@ -71,6 +71,7 @@ def annual_sales_data():
         annual_sales_dict["months_inventory"] = months_inventory
         annual_sales_data.append(annual_sales_dict)
         
+    #return render_template('index.html', json_data = sales_data)
     return jsonify(annual_sales_data)
 
 @austin_housing_app.route("/api/v1.0/monthly_sales_table")

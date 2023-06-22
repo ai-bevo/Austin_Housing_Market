@@ -81,6 +81,8 @@ target/
 # IPython
 profile_default/
 config.py
+austin_housing_app.py
+links.html
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
