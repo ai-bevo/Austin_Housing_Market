@@ -18,7 +18,7 @@ Group Project # 3 - Austin Housing Market
 ---
 ## Background <a name="background"></a>
 
-The Austin Housing market is one of the hottest markets in 2021, and these listings/collected data show how that market has changed over the past couple of years. For this project we created a visualization dashboard by utilizing a Python Flask-powered API, HTML/CSS, JavaScript, and a SQL database. poltly, leaflet, D3 and charts.js. 
+This project aims to examine monthly housing activity in the Austin-Round Rock Area from 1990 to 2023, focusing in on 2021 as it was one of the hottest markets. We utilized key metrics such as average home prices, housing inventory, and sales volume to analyze the housing market's growth and fluctuations over time. We completed a comprehensive analysis and a visualization dashboard using a Python Flask-powered API, HTML/CSS, JavaScript, and a SQL database. poltly, leaflet, D3 and charts.js. This project seeks to provide valuable insights in understanding Austin's real estate dynamics.
 
 
 # Final Production Database
