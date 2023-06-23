@@ -34,10 +34,10 @@
             </div> 
           </div>
           <div class="col-md-5">
-            <div id="plot"></div>
+            <div id="plot_month"></div>
            </div>
-          <div class="col-md-5">
-            <div id="gauge"></div>
+          <div class="col-md-10">
+            <div id="plot"></div>
           </div> 
         </div>
         <div class="row">
@@ -55,9 +55,11 @@
         <li><a href="{{ url_for('annual_sales_data') }}">/api/v1.0/annual_sales_table</a></li>
         <li><a href="{{ url_for('monthly_sales_data') }}">/api/v1.0/monthly_sales_table</a></li>
         <li><a href="{{ url_for('price_distribution_data') }}">/api/v1.0/price_distribution_table</a></li>
+        <li><a href="{{ url_for('austin_2021_data') }}">/api/v1.0/austin_2021_home_sales</a></li>
     </ul>
     <!-- Include the JavaScript file -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" src="/static/js/script.js"></script>
+    <script type="text/javascript" src="/static/js/script_monthly.js"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@ Base.prepare(engine, reflect=True)
 annual_sales = Base.classes.annual_sales
 monthly_sales = Base.classes.monthly_sales
 price_distribution = Base.classes.price_distribution
+austin_21 = Base.classes.austin_2021
 
 session = Session(engine)
 
@@ -133,6 +134,39 @@ def price_distribution_data():
         
     return jsonify(price_distribution_data)
         
+
+@austin_housing_app.route("/api/v1.0/austin_2021_home_sales")
+def austin_2021_data():
+    session = Session(engine)
+    
+    results = session.query(austin_21.id, austin_21.zpid, austin_21.city, austin_21.streetaddress, austin_21.zipcode, austin_21.latitude, austin_21.longitude,
+                            austin_21.propertytaxrate, austin_21.yearbuilt, austin_21.lotsizesqft, austin_21.livingareasqft, austin_21.numofbedrooms, austin_21.numofbathrooms,
+                            austin_21.hasspa, austin_21.latestprice).all()  
+                            
+    session.close()
+    
+    austin_2021_table = []
+    for id, zpid, city, streetAddress, zipcode, latitude, longitude, propertyTaxRate, yearBuilt, lotSizeSqFt, livingAreaSqFt, numofBedrooms, numofBaths, hasSpa, latestPrice in results:
+        austin_21_dict = {}
+        austin_21_dict["id"] = id
+        austin_21_dict["zpid"] = zpid
+        austin_21_dict["city"] = city
+        austin_21_dict["streetaddress"] = streetAddress
+        austin_21_dict["zipcode"] = zipcode
+        austin_21_dict["latitude"] = latitude
+        austin_21_dict["longitude"] = longitude
+        austin_21_dict["propertytaxrate"] = propertyTaxRate
+        austin_21_dict["yearbuilt"] = yearBuilt
+        austin_21_dict["lotsizesqft"] = lotSizeSqFt
+        austin_21_dict["livingareasqft"] = livingAreaSqFt
+        austin_21_dict["numbedrooms"] = numofBedrooms
+        austin_21_dict["numbathsrooms"] = numofBaths
+        austin_21_dict["hasspa"] = hasSpa
+        austin_21_dict["latestprice"] = latestPrice
+        austin_2021_table.append(austin_21_dict)
+        
+    return jsonify(austin_2021_table)
+
 
 if __name__ == '__main__':
     austin_housing_app.run(debug=True)
