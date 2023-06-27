@@ -12,7 +12,7 @@ from flask import Flask, jsonify, render_template
 #from flask_cors import CORS
 from config import pw
 
-connection_string = f"postgres:{pw}@localhost:5432/Austin_Housing_Market"
+connection_string = f"postgres:{pw}@localhost:5433/Austin_Housing_Market"
 engine = create_engine(f'postgresql://{connection_string}')
 
 
