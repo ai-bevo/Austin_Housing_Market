@@ -19,28 +19,7 @@
 </head>
 <body>
 
-  <!-- start KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
-  <div>
-    <!--<style>  
-      .linechart {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-    </style>-->
-    <div class="linechart">
-      <canvas id="dubLineChart" style="width: 200px; height: 100px;"></canvas>
-      <button id="SalesVsList">Sales vs Total listings</button>
-      <button id="AvgVsMedPrice">Average vs Median price</button>
-      <button id="monthlyInventory">Monthly Inventory</button>
-      <button id="salesVsMedPrice">Sales vs Median price</button>
-      <button id="salesVsInventory">Sales vs Monthly Inventory</button>
-      <button id="medPriceVsList">Median price Vs Total listings</button>
-    </div>
-  </div>
-<!-- end KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
+
 
 
 
@@ -51,6 +30,32 @@
             <p>Use the interactive charts below to explore the dataset</p>
           </div>
         </div>
+
+        <div class="row">
+            <!-- start KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
+            <div>
+              <!--<style>  
+                .linechart {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+                }
+              </style>-->
+              <div class="linechart">
+                <canvas id="dubLineChart" style="width: 200px; height: 100px;"></canvas>
+                <button id="SalesVsList">Sales vs Total listings</button>
+                <button id="AvgVsMedPrice">Average vs Median price</button>
+                <button id="monthlyInventory">Monthly Inventory</button>
+                <button id="salesVsMedPrice">Sales vs Median price</button>
+                <button id="salesVsInventory">Sales vs Monthly Inventory</button>
+                <button id="medPriceVsList">Median price Vs Total listings</button>
+              </div>
+            </div>
+          <!-- end KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
+        </div>
+
         <div class="row">
           <div class="col-md-2">
             <div class="well">
@@ -64,9 +69,6 @@
 
             </div>
             <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">Demographic Info</h3>
-              </div>
                <div id="sample-metadata" class="panel-body"></div>
             </div>
           </div>

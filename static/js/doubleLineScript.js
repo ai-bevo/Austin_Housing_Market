@@ -1,4 +1,4 @@
-   const jsonData = "http://127.0.0.1:5000/api/v1.0/monthly_sales_table";
+   const jsonData1 = "http://127.0.0.1:5000/api/v1.0/monthly_sales_table";
    let monthArray = [];
    let salesArray = [];
    let listingArray = [];
@@ -7,7 +7,7 @@
    let monthInventArray =[];
    let linechart;
    
-   d3.json(jsonData).then(function(data) {
+   d3.json(jsonData1).then(function(data) {
      for (let i = 0; i < data.length; i++) {
        let sale = data[i]['sales'];
        let listin =data[i]['total_listings'];
