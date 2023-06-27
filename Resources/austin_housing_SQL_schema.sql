@@ -108,3 +108,8 @@ FROM price_distribution;
 
 SELECT * 
 FROM austin_2021;
+
+
+SELECT *
+FROM pg_settings
+WHERE name = 'port';

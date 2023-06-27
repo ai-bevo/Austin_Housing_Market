@@ -1,6 +1,6 @@
 
 # install for connecting with postgresql
-# pip install psycopg2-binary
+#pip install psycopg2-binary
 import pandas as pd
 import psycopg2 as pg
 import sqlalchemy
