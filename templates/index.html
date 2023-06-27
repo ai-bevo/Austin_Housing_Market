@@ -11,8 +11,38 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 
+       <!-- start KRP Include  chart.js, double_line js file -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- end KRP Include  chart.js, double_line js file -->
+
 </head>
 <body>
+
+  <!-- start KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
+  <div>
+    <!--<style>  
+      .linechart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    </style>-->
+    <div class="linechart">
+      <canvas id="dubLineChart" style="width: 200px; height: 100px;"></canvas>
+      <button id="SalesVsList">Sales vs Total listings</button>
+      <button id="AvgVsMedPrice">Average vs Median price</button>
+      <button id="monthlyInventory">Monthly Inventory</button>
+      <button id="salesVsMedPrice">Sales vs Median price</button>
+      <button id="salesVsInventory">Sales vs Monthly Inventory</button>
+      <button id="medPriceVsList">Median price Vs Total listings</button>
+    </div>
+  </div>
+<!-- end KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
+
+
+
     <div class="container">
         <div class="row">
           <div class="col-md-12 jumbotron text-center">
@@ -67,5 +97,11 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" src="/static/js/script.js"></script>
     <script type="text/javascript" src="/static/js/script_monthly.js"></script>
+    
+        <!-- start KRP Include the JavaScript file AND chart.js, double_line js file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../static/js/doubleLineScript.js"></script>
+ <!-- end KRP Include the JavaScript file AND chart.js, double_line js file --> 
+
 </body>
 </html>
