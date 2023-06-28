@@ -36,7 +36,8 @@ function marker(response) {
 
     // Create a marker for each data point and bind a popup
     let marker = L.marker([obj.latitude, obj.longitude])
-      .bindPopup(`<h3>City: ${obj.city}</h3><hr><p>Address: ${obj.streetaddress}</p><hr><p>Zipcode: ${obj.zipcode}</p><hr><p>Price: ${obj.latestprice}</p>`);
+      .bindPopup(`<h3>City: ${obj.city}</h3><hr><p>Address: ${obj.streetaddress}</p>
+      <hr><p>Zipcode:${obj.zipcode}</p><hr><p>Price: ${obj.latestprice}</p> <hr><p>Living SqFt: ${obj.livingareasqft}</p>`);
 
     // Add the marker to the marker cluster group
     markers.addLayer(marker);
