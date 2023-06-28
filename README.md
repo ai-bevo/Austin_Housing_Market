@@ -127,7 +127,7 @@ Backend dashboard showcases data visualizations that run without error.
 2. dash board utilized Leaflet or Plotly chart built from data gathered
     
 <p align="center">
-<img src="images/crowdfunding_db_ERD.png" alt="dashboard page" width="593" height="668">
+<img src="images/dashboard.png" alt="dashboard page" >
 </p>
 
 ---
