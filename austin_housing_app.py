@@ -46,13 +46,13 @@ def welcome():
     # List all available api routes.
 
     return render_template("index.html")
-    #return(
-    #    f"Available Routes:<br/>"
-    #    f"/api/v1.0/annual_sales_table<br/>"
-    #    f"/api/v1.0/monthly_sales_table<br/>"
-    #    f"/api/v1.0/price_distribution_table<br/>"
-    #
-
+  
+@austin_housing_app.route("/index2.html")
+def welcome_again():
+    # List all available api routes.
+    return render_template("index2.html")
+  
+  
 @austin_housing_app.route("/api/v1.0/annual_sales_table")
 def annual_sales_data():
     # session link to annual sales table

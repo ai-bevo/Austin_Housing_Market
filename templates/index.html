@@ -11,45 +11,26 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
      
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
        <!-- start KRP Include  chart.js, double_line js file -->
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <!-- end KRP Include  chart.js, double_line js file -->
 
 </head>
 <body>
-
-
-
-
-
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12 jumbotron text-center">
+          <div class="col-lg-12 jumbotron text-center">
             <h1>Austin Housing Dashboard</h1>
             <p>Use the interactive charts below to explore the dataset</p>
           </div>
         </div>
-
         <div class="row">
-            <!-- start KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
-            <div>
-              <!--<style>  
-                .linechart {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-                  text-align: center;
-                }
-              </style>-->
-              
-              <center>
-                <h3> Austin Monthly Housing Data: 1990 - 2023 </h3>
-              </center>
-
-              <div class="linechart">
-                <canvas id="dubLineChart" style="width: 200px; height: 100px;"></canvas>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div class="linechart">
+              <canvas id="dubLineChart" style="width: 200px; height: 100px;"></canvas>
+              <div class="d-flex justify-content-center">
                 <button id="SalesVsList">Sales vs Total listings</button>
                 <button id="AvgVsMedPrice">Average vs Median price</button>
                 <button id="monthlyInventory">Monthly Inventory</button>
@@ -58,65 +39,58 @@
                 <button id="medPriceVsList">Median price Vs Total listings</button>
               </div>
             </div>
-          <!-- end KRP Buttons chart.js, double_line js file style portion is css to center buttons -->
+          </div>
         </div>
-
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
             <div id="bubble"></div>
           </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-2">
-            <div class="well">
-              <h4>Housing Info:</h4>
-              <!-- <select id="selDataset" onchange="optionChanged(this.value)"></select> -->
-              <input type = "radio", name ="option", id = "annual", class = "ra", onclick="annualOption()"></input>
-              <label for="annual">Annual Sales</label><br>
-
-              <input type = "radio", name ="option", id = "monthly", class = "rm", onclick="monthlyOption()"></input>
-              <label for="monthly">Monthly Sales</label>
-
-            </div>
-            
-          </div>
-          <div class="col-md-5">
-            <div id="plot_month"></div>
-           </div>
-          <div class="col-md-10">
-            <div id="plot"></div>
-          </div> 
         </div>
         <br>
-        <!--<div class="row">
-          <div class="col-md-12">
-            <div id="bubble"></div>
-          </div>
-        </div>  -->
+    </div>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="idk">
+          <h4>Housing Info:</h4>
+          <<select id="selDataset" onchange="optionChanged(this.value)"></select>>
+          <input type = "radio" name ="option" id = "annual" class = "ra" onclick="annualOption()"></input>
+          <label for="annual">Annual Sales</label><br>
+          <input type = "radio" name ="option" id = "monthly" class = "rm" onclick="monthlyOption()"></input>
+          <label for="monthly">Monthly Sales</label>
+        </div>
+      </div>     
+      <div class="month_class">
+        <div id="plot_month"></div>
+       </div>
+      <div class="year_class">
+        <div id="plot"></div>
       </div>
-      
-    <div id="plot"></div>
-    <div id="leafletMap"></div>
-    <!-- <h1>Austin_Housing_Dashboard</h1> -->
-    <p>Available Routes:</p>
-    <ul>
-        <li><a href="{{ url_for('annual_sales_data') }}">/api/v1.0/annual_sales_table</a></li>
-        <li><a href="{{ url_for('monthly_sales_data') }}">/api/v1.0/monthly_sales_table</a></li>
-        <li><a href="{{ url_for('price_distribution_data') }}">/api/v1.0/price_distribution_table</a></li>
-        <li><a href="{{ url_for('austin_2021_data') }}">/api/v1.0/austin_2021_home_sales</a></li>
-    </ul>
-    <!-- Include the JavaScript file -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script type="text/javascript" src="/static/js/script.js"></script>
-    <!--<script type="text/javascript" src="/static/js/script_monthly.js"></script> -->
-    <script type="text/javascript" src="/static/js/script_bubble.js"></script>
-    
-        <!-- start KRP Include the JavaScript file AND chart.js, double_line js file -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../static/js/doubleLineScript.js"></script>
- <!-- end KRP Include the JavaScript file AND chart.js, double_line js file --> 
+    </div-->
 
+        <p>Austin Housing Map</p>
+        <a href="/index2.html"> link to our map</a> 
+
+
+    <div class="container-fluid">
+      <p>JSONified Data:</p>
+      <ul>
+          <li><a href="{{ url_for('annual_sales_data') }}">/api/v1.0/annual_sales_table</a></li>
+          <li><a href="{{ url_for('monthly_sales_data') }}">/api/v1.0/monthly_sales_table</a></li>
+          <li><a href="{{ url_for('price_distribution_data') }}">/api/v1.0/price_distribution_table</a></li>
+          <li><a href="{{ url_for('austin_2021_data') }}">/api/v1.0/austin_2021_home_sales</a></li>
+      </ul>
+      <!-- Include the JavaScript file -->
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script type="text/javascript" src="/static/js/script.js"></script>
+      <!--<script type="text/javascript" src="/static/js/script_monthly.js"></script> -->
+      <script type="text/javascript" src="/static/js/script_bubble.js"></script>
+      
+      
+          <!-- start KRP Include the JavaScript file AND chart.js, double_line js file -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="../static/js/doubleLineScript.js"></script>
+    </div>
+    <!-- <h1>Austin_Housing_Dashboard</h1> -->
 </body>
 </html>
