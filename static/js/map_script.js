@@ -27,29 +27,24 @@ function createMap(houses) {
 
 function marker(response) {
   console.log(response); // Debugging: Log the response object
-  if (!response || !Array.isArray(response)) {
-    console.error('Invalid response data');
-    return;
-  }
 
-  let houseMarkers = [];
+  let markers = L.markerClusterGroup(); // Create a marker cluster group
 
   // Loop through the data array
   for (let index = 0; index < response.length; index++) {
     let obj = response[index];
 
     // Create a marker for each data point and bind a popup
-    let houseMarker = L.marker([obj.latitude, obj.longitude])
+    let marker = L.marker([obj.latitude, obj.longitude])
       .bindPopup(`<h3>City: ${obj.city}</h3><hr><p>Address: ${obj.streetaddress}</p><hr><p>Zipcode: ${obj.zipcode}</p><hr><p>Price: ${obj.latestprice}</p>`);
 
-    // Add the marker to the houseMarkers array
-    houseMarkers.push(houseMarker);
+    // Add the marker to the marker cluster group
+    markers.addLayer(marker);
   }
 
-  // Create a layer group from the houseMarkers array and pass it to the createMap function
-  createMap(L.layerGroup(houseMarkers));
+  // Pass the marker cluster group to the createMap function
+  createMap(markers);
 }
 
 d3.json("http://127.0.0.1:5000/api/v1.0/austin_2021_home_sales")
-  .then(marker)
-  .catch(error => console.error('Error:', error));
+  .then(marker);
