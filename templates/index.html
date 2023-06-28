@@ -75,36 +75,43 @@
         </div>
         <br>
     </div>
-    <!-- <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="idk">
-          <h4>Housing Info:</h4>
-          <<select id="selDataset" onchange="optionChanged(this.value)"></select>>
-          <input type = "radio" name ="option" id = "annual" class = "ra" onclick="annualOption()"></input>
-          <label for="annual">Annual Sales</label><br>
-          <input type = "radio" name ="option" id = "monthly" class = "rm" onclick="monthlyOption()"></input>
-          <label for="monthly">Monthly Sales</label>
+        <div class="col-sm-1">
         </div>
-      </div>     
-      <div class="month_class">
-        <div id="plot_month"></div>
-       </div>
-      <div class="year_class">
-        <div id="plot"></div>
+        <div class="col-sm-2">
+          <div class="idk">
+            <h4 class="float-start">Housing Info:</h4>
+            <input type="radio" name="option" id="annual" class="ra" onclick="annualOption()" />
+            <label for="annual">Annual Sales</label><br>
+            <input type="radio" name="option" id="monthly" class="rm" onclick="monthlyOption()" />
+            <label for="monthly">Monthly Sales</label>
+          </div>
+        </div>
       </div>
-    </div-->
-
-
-    <!-- attach href to button-->
-   
-    <div>
-      <a href="/index2.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Austin Housing Map</a>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="month_class">
+            <div id="plot_month"></div>
+          </div>
+          <div class="year_class">
+            <div id="plot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div>
+            <a href="/index2.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Austin Housing Map</a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- attach href to button-->  
     <br>
      <!-- <p>Austin Housing Map</p>
         <a href="/index2.html"> link to our map</a>-->
-
-
     <div class="container-fluid">
       <p>JSONified Data:</p>
       <ul>

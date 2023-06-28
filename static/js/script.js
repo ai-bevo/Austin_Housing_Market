@@ -1,6 +1,6 @@
 const jsonData = "http://127.0.0.1:5000/api/v1.0/annual_sales_table";
 const jsonDataMonth = "http://127.0.0.1:5000/api/v1.0/monthly_sales_table";
-
+window.onresize = handleScreenSizeChange;
 // HERE //
 d3.select("#annual").on("click", function() {
   handleGraphVisibility("annual");
@@ -10,15 +10,38 @@ d3.select("#monthly").on("click", function() {
   handleGraphVisibility("monthly");
 });
 
-function handleGraphVisibility(graphID) {
-  if(graphID == "annual") {
-      d3.selectAll(".col-md-5").style("display", "none");
-      d3.selectAll(".col-md-10").style("display", "block");
-  } else {
-      d3.selectAll(".col-md-10").style("display", "none");
-      d3.select(".col-md-5").style("display", "block");
+function handleScreenSizeChange() {
+    if (window.innerWidth < 576) {
+      // Code to regenerate the graphs for small screens
+      if (graphID == "annual") {
+        d3.select(".month_class").style("display", "none");
+        d3.select(".year_class").style("display", "block");
+      } else if (graphID == "monthly") {
+        d3.select(".year_class").style("display", "none");
+        d3.select(".month_class").style("display", "block");
+      }
+    }
   }
-}
+
+function handleResize() {
+    if (graphID == "annual") {
+        d3.select(".month_class").style("display", "none");
+        d3.select(".year_class").style("display", "block");
+      } else if (graphID == "monthly") {
+        d3.select(".year_class").style("display", "none");
+        d3.select(".month_class").style("display", "block");
+      }
+    }
+
+function handleGraphVisibility(graphID) {
+    if (graphID == "annual") {
+        d3.select(".month_class").style("display", "none");
+        d3.select(".year_class").style("display", "block");
+      } else if (graphID == "monthly") {
+        d3.select(".year_class").style("display", "none");
+        d3.select(".month_class").style("display", "block");
+      }
+    }
 
 function annualOption(){
     d3.json(jsonData).then(function(data) {
