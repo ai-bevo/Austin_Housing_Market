@@ -36,10 +36,10 @@ Data for this dataset was pulled from a kaggle csv scraped in January 2021, alon
 ## Findings and Conclusions <a name="findings"></a>
 The following findings and conclusions from the analysis are as follows:
 
- 1.  ### Change in housing prices over time 
-      add finding here
+ 1.  ### Change in housing prices over time compared to inventory
+     
 <p align="center">
-<img src="images/Outcome_of_Campaigns_pie.png" alt="visualization" width="480" height="480">
+<img src="images/price_vs_Invent_line.png" alt="visualization" >
 </p>
 
  2. ### total listing vs sales in 2020-21
@@ -54,7 +54,7 @@ The following findings and conclusions from the analysis are as follows:
       add findings here 
 
 <p align="center">
-<img src="images/Percentage_Successful.png" alt="visualization" width="640" height="480">
+<img src="images/price_dis_chart.png" alt="buble chart">
 </p>
 
  4.  ### geo map
